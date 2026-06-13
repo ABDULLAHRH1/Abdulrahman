@@ -315,6 +315,122 @@ body {
 .breadcrumbs .current { color: var(--navy); font-weight: 600; }
 .breadcrumbs .sep { color: #ccc; font-size: 10px; }
 
+/* Profile stats bar */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.ps-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ps-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Letter status bar */
+.letter-status {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+.ls-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text);
+}
+.ls-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Letter action cards */
+.letter-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+.la-card {
+  cursor: pointer;
+  margin-bottom: 0 !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.la-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.la-card .card-header { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.la-arrow {
+  margin-right: auto;
+  color: var(--muted);
+  transition: transform 0.2s;
+}
+.la-card:hover .la-arrow { transform: translateX(4px); color: var(--navy); }
+
+/* Docs summary bar */
+.docs-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.ds-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+}
+.ds-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.ds-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Verified badge on doc cards */
+.doc-card { position: relative; }
+.dc-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+.dc-badge.verified {
+  background: rgba(46,125,50,0.1);
+  color: #2e7d32;
+  border: 1px solid rgba(46,125,50,0.2);
+} 
+.ps-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.ps-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
 /* ===== CARDS ===== */
 .card {
   background: var(--surface);
@@ -728,6 +844,8 @@ input[type=range]::-moz-range-thumb {
   .contact-grid { grid-template-columns: 1fr; }
   .slider-result { grid-template-columns: repeat(2, 1fr); }
   .letter { padding: 18px; }
+  .profile-stats { grid-template-columns: repeat(2, 1fr); }
+  .letter-actions { grid-template-columns: 1fr; }
 }
 
 /* ===== RESPONSIVE: MOBILE (≤480px) ===== */
@@ -767,6 +885,9 @@ input[type=range]::-moz-range-thumb {
   .sp-card { padding: 14px; }
   .sp-amt { font-size: 20px; }
   .contact-grid { gap: 10px; }
+  .profile-stats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .ps-val { font-size: 15px; }
+  .ps-item { padding: 8px 6px; }
   .contact-btn { padding: 12px 14px; }
   .letter { padding: 14px; line-height: 1.8; }
   .footer { padding: 22px 16px; font-size: 11px; }
@@ -881,6 +1002,27 @@ input[type=range]::-moz-range-thumb {
 
   <!-- PANEL: PROFILE -->
   <div class="panel active" id="panel-profile">
+
+    <!-- Panel Stats Summary -->
+    <div class="profile-stats">
+      <div class="ps-item">
+        <div class="ps-val">95.21%</div>
+        <div class="ps-lbl">معدل الثانوية</div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-val">88</div>
+        <div class="ps-lbl">اختبار القدرات</div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-val">C1</div>
+        <div class="ps-lbl">اللغة التركية</div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-val">#081-7AC-89</div>
+        <div class="ps-lbl">YÖK ID</div>
+      </div>
+    </div>
+
     <div class="info-grid">
       <div class="card">
         <div class="card-header">
@@ -1003,6 +1145,25 @@ input[type=range]::-moz-range-thumb {
 
   <!-- PANEL: LETTER -->
   <div class="panel" id="panel-letter">
+
+    <!-- Letter header card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div>
+          <div class="card-title">خطاب طلب الرعاية التعليمية</div>
+          <div class="card-sub">مقدم إلى الجهات الداعمة والمحسنين · 2026</div>
+        </div>
+      </div>
+      <div class="letter-status">
+        <div class="ls-item"><span class="ls-dot" style="background:#2e7d32"></span> الحالة: <strong>قيد المراجعة</strong></div>
+        <div class="ls-item"><span class="ls-dot" style="background:#c8973a"></span> الأولوية: <strong>عالية</strong></div>
+        <div class="ls-item"><span class="ls-dot" style="background:#0a2f5c"></span> آخر موعد: <strong>31 يوليو 2026</strong></div>
+      </div>
+    </div>
+
     <div class="letter">
       <div class="bismillah">بسم الله الرحمن الرحيم</div>
       <p style="font-weight:700;color:var(--navy);font-size:15px;">الموضوع: طلب رعاية وكفالة تعليمية لطالب علم في تخصص التمريض</p>
@@ -1019,12 +1180,58 @@ input[type=range]::-moz-range-thumb {
         📞 +966 57 893 5038 &nbsp;|&nbsp; ✉️ balfarsy985@gmail.com
       </p>
     </div>
+
+    <!-- Action cards -->
+    <div class="letter-actions">
+      <div class="card la-card" onclick="window.open(pdfFiles.accept, '_blank')">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(10,47,92,0.1);color:var(--navy);">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <div class="card-title">وثيقة القبول الرسمية</div>
+            <div class="card-sub">Karabük Üniversitesi · 2026</div>
+          </div>
+          <svg class="la-arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <div class="card la-card" onclick="showTab('budget', document.querySelectorAll('.nav-tab')[2])">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(200,151,58,0.1);color:#c8973a;">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <div class="card-title">تفاصيل الميزانية</div>
+            <div class="card-sub">تعرف على التكاليف السنوية بالتفصيل</div>
+          </div>
+          <svg class="la-arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 
 
   <!-- PANEL: DOCS -->
   <div class="panel" id="panel-docs">
+
+    <!-- Document summary bar -->
+    <div class="docs-summary">
+      <div class="ds-item">
+        <div class="ds-val">3</div>
+        <div class="ds-lbl">المستندات</div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-val" style="color:#2e7d32;">PDF</div>
+        <div class="ds-lbl">الصيغة</div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-val">جميعها</div>
+        <div class="ds-lbl">موثقة ومعتمدة</div>
+      </div>
+    </div>
+
     <div class="card">
       <div class="card-header">
         <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
@@ -1032,6 +1239,7 @@ input[type=range]::-moz-range-thumb {
       </div>
       <div class="docs-grid">
         <div class="doc-card" onclick="window.open(pdfFiles.accept, '_blank')">
+          <div class="dc-badge verified">موثق</div>
           <div class="dc-icon">
             <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
@@ -1045,6 +1253,7 @@ input[type=range]::-moz-range-thumb {
         </div>
 
         <div class="doc-card" onclick="window.open(pdfFiles.turkish, '_blank')">
+          <div class="dc-badge verified">موثق</div>
           <div class="dc-icon">
             <svg viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/><path d="M3 7l9 5 9-5"/></svg>
           </div>
@@ -1058,6 +1267,7 @@ input[type=range]::-moz-range-thumb {
         </div>
 
         <div class="doc-card" onclick="window.open(pdfFiles.qual, '_blank')">
+          <div class="dc-badge verified">موثق</div>
           <div class="dc-icon">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
           </div>
@@ -1115,6 +1325,43 @@ input[type=range]::-moz-range-thumb {
         <div class="bt-val">~$6,950</div>
       </div>
     </div>
+
+    <!-- Sponsorship levels -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(200,151,58,0.1);color:#c8973a;">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div><div class="card-title">مستويات المساهمة المقترحة</div><div class="card-sub">بادر بدعم مسيرة طالب علم</div></div>
+      </div>
+      <div class="sponsor-tiers">
+        <div class="st-tier" onclick="document.getElementById('budgetSlider').value=25; updateBudget(25); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+          <div class="st-pct">25%</div>
+          <div class="st-amt">$1,738</div>
+          <div class="st-lbl">مساهم</div>
+          <div class="st-desc">تغطية الرسوم الجامعية</div>
+        </div>
+        <div class="st-tier" onclick="document.getElementById('budgetSlider').value=50; updateBudget(50); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+          <div class="st-pct">50%</div>
+          <div class="st-amt">$3,475</div>
+          <div class="st-lbl">داعم</div>
+          <div class="st-desc">تغطية نصف التكاليف</div>
+        </div>
+        <div class="st-tier featured" onclick="document.getElementById('budgetSlider').value=75; updateBudget(75); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+          <div class="st-pct">75%</div>
+          <div class="st-amt">$5,213</div>
+          <div class="st-lbl">كفيل</div>
+          <div class="st-desc">التغطية الشاملة</div>
+        </div>
+        <div class="st-tier" onclick="document.getElementById('budgetSlider').value=100; updateBudget(100); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+          <div class="st-pct">100%</div>
+          <div class="st-amt">$6,950</div>
+          <div class="st-lbl">مؤسس</div>
+          <div class="st-desc">كفالة كاملة</div>
+        </div>
+      </div>
+    </div>
+
     <div class="card">
       <div class="card-header">
         <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div>
