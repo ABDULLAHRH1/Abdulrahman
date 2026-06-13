@@ -418,6 +418,56 @@ body {
   background: rgba(46,125,50,0.1);
   color: #2e7d32;
   border: 1px solid rgba(46,125,50,0.2);
+}
+
+/* Sponsorship tiers */
+.sponsor-tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.st-tier {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.st-tier:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-color: var(--navy);
+}
+.st-tier.featured {
+  border: 2px solid #c8973a;
+  background: linear-gradient(135deg, rgba(200,151,58,0.05), rgba(200,151,58,0.1));
+}
+.st-tier.featured:hover { border-color: #b8862e; }
+.st-pct {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.st-amt {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c8973a;
+  margin: 4px 0;
+}
+.st-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.st-desc {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
 } 
 .ps-val {
   font-size: 18px;
@@ -846,6 +896,8 @@ input[type=range]::-moz-range-thumb {
   .letter { padding: 18px; }
   .profile-stats { grid-template-columns: repeat(2, 1fr); }
   .letter-actions { grid-template-columns: 1fr; }
+  .docs-summary { grid-template-columns: repeat(3, 1fr); }
+  .sponsor-tiers { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ===== RESPONSIVE: MOBILE (≤480px) ===== */
@@ -1335,25 +1387,25 @@ input[type=range]::-moz-range-thumb {
         <div><div class="card-title">مستويات المساهمة المقترحة</div><div class="card-sub">بادر بدعم مسيرة طالب علم</div></div>
       </div>
       <div class="sponsor-tiers">
-        <div class="st-tier" onclick="document.getElementById('budgetSlider').value=25; updateBudget(25); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+        <div class="st-tier" onclick="selectTier(25)">
           <div class="st-pct">25%</div>
           <div class="st-amt">$1,738</div>
           <div class="st-lbl">مساهم</div>
           <div class="st-desc">تغطية الرسوم الجامعية</div>
         </div>
-        <div class="st-tier" onclick="document.getElementById('budgetSlider').value=50; updateBudget(50); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+        <div class="st-tier" onclick="selectTier(50)">
           <div class="st-pct">50%</div>
           <div class="st-amt">$3,475</div>
           <div class="st-lbl">داعم</div>
           <div class="st-desc">تغطية نصف التكاليف</div>
         </div>
-        <div class="st-tier featured" onclick="document.getElementById('budgetSlider').value=75; updateBudget(75); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+        <div class="st-tier featured" onclick="selectTier(75)">
           <div class="st-pct">75%</div>
           <div class="st-amt">$5,213</div>
           <div class="st-lbl">كفيل</div>
           <div class="st-desc">التغطية الشاملة</div>
         </div>
-        <div class="st-tier" onclick="document.getElementById('budgetSlider').value=100; updateBudget(100); showTab('budget',document.querySelectorAll('.nav-tab')[3])">
+        <div class="st-tier" onclick="selectTier(100)">
           <div class="st-pct">100%</div>
           <div class="st-amt">$6,950</div>
           <div class="st-lbl">مؤسس</div>
@@ -1478,6 +1530,21 @@ function positionBubble(slider, bubble) {
   var goldPct = Math.round((1 - thumbCenterLeft / rect.width) * 100);
   slider.style.setProperty('--pct', goldPct + '%');
 }
+function selectTier(pct) {
+  var btn = document.querySelectorAll('.nav-tab')[2];
+  var panel = document.getElementById('panel-budget');
+  if (panel.classList.contains('active')) {
+    document.getElementById('budgetSlider').value = pct;
+    updateBudget(pct);
+  } else {
+    showTab('budget', btn);
+    setTimeout(function() {
+      document.getElementById('budgetSlider').value = pct;
+      updateBudget(pct);
+    }, 450);
+  }
+}
+
 function updateBudget(v) {
   var annual = Math.round(6950 * v / 100);
   var monthly = Math.round(annual / 12);
