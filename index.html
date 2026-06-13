@@ -1,0 +1,1292 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- العنوان الرئيسي للمتصفح -->
+<title>ملف الكفالة التعليمية | عبد الرحمن رحمة الله</title>
+
+<!-- إضافات تواصل اجتماعي ذكية ومختصرة (للواتساب وغيره) -->
+<meta property="og:title" content="ملف الكفالة التعليمية" />
+<meta property="og:description" content="الموقع الرسمي للمستندات والمؤهلات التعليمية الخاصة بالطالب عبد الرحمن رحمة الله." />
+<meta property="og:type" content="website" />
+<meta name="description" content="الموقع الرسمي للمستندات والمؤهلات التعليمية الخاصة بالطالب عبد الرحمن رحمة الله." />
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0a2f5c;
+  --navy2: #163d73;
+  --gold: #c8973a;
+  --gold-light: #fdf5e6;
+  --gold-mid: #f5d08a;
+  --white: #ffffff;
+  --bg: #f4f6fa;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --muted: #718096;
+  --success: #2e7d32;
+  --success-bg: #e8f5e9;
+  --danger: #c0392b;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(10,47,92,0.1);
+  --shadow-lg: 0 8px 30px rgba(10,47,92,0.15);
+  --radius: 14px;
+  --radius-sm: 10px;
+}
+body {
+  font-family: 'Noto Naskh Arabic', serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== HEADER / HERO ===== */
+.header {
+  background: linear-gradient(135deg, #071e3d 0%, #0a2f5c 50%, #163d73 100%);
+  padding: 48px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,151,58,0.12) 0%, transparent 70%);
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,151,58,0.08) 0%, transparent 70%);
+}
+.header-inner {
+  position: relative; z-index: 1;
+}
+
+/* Hero two-column */
+.hero {
+  display: flex; align-items: center; gap: 48px;
+  margin-bottom: 32px;
+}
+.hero-info { flex: 1; }
+.hero-image { flex-shrink: 0; }
+
+.hero-img-wrap {
+  position: relative;
+  width: 152px; height: 152px;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-img-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(200,151,58,0.3);
+}
+.hero-img-ring::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(200,151,58,0.25);
+  animation: spin 30s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero-img-ring::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(200,151,58,0.15);
+}
+.hero-img {
+  width: 132px; height: 132px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 8px rgba(200,151,58,0.12), 0 12px 40px rgba(0,0,0,0.35);
+  transition: transform 0.3s;
+}
+.hero-img:hover { transform: scale(1.05); }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(200,151,58,0.15);
+  border: 1px solid rgba(200,151,58,0.35);
+  color: var(--gold-mid);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.4px;
+}
+.hero-name {
+  color: #fff;
+  font-size: clamp(24px, 4.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.hero-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: clamp(13px, 2vw, 15px);
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+/* Stats cards */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 16px 18px;
+  backdrop-filter: blur(4px);
+  transition: background 0.25s, transform 0.25s;
+}
+.stat-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
+.stat-card-icon {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: rgba(200,151,58,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.stat-card-icon svg { width: 20px; height: 20px; stroke: var(--gold-mid); fill: none; stroke-width: 1.6; }
+.stat-card-body { display: flex; flex-direction: column; gap: 2px; }
+.stat-card-label { font-size: 11px; color: rgba(255,255,255,0.55); }
+.stat-card-value { font-size: 16px; font-weight: 700; color: #fff; }
+.stat-card-value .gold { color: var(--gold-mid); }
+.stat-card-value .red { color: #ef5350; }
+
+/* Progress */
+.progress-section {
+  max-width: 680px; margin: 0 auto 4px;
+}
+.progress-section .progress-label {
+  display: flex; justify-content: space-between;
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.progress-section .progress-label span:last-child {
+  color: var(--gold-mid);
+  font-weight: 700;
+}
+.progress-bar {
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), #e0b04a);
+  border-radius: 20px;
+  width: 0;
+  transition: width 1.5s cubic-bezier(.16,1,.3,1);
+  box-shadow: 0 0 12px rgba(200,151,58,0.3);
+}
+
+/* ===== SITE WIDTH CONSISTENCY ===== */
+.tabs-wrap, .header-inner { max-width: 1000px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+.main { max-width: 1000px; margin: 0 auto; padding: 28px 20px; }
+
+/* ===== NAV TABS ===== */
+.nav-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0 0 14px 14px;
+  padding: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-tab {
+  flex-shrink: 0;
+  padding: 11px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-tab svg { width: 17px; height: 17px; flex-shrink: 0; }
+.nav-tab:hover { color: var(--navy); background: var(--bg); transform: translateY(-1px); }
+.nav-tab.active {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(10,47,92,0.3);
+  transform: none;
+}
+.nav-tab:active { transform: scale(0.96); }
+
+/* ===== PANELS ===== */
+.panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.panel.entering { display: block; }
+.panel.exiting {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Stagger card animations */
+.panel.active .card { animation: cardIn 0.4s ease backwards; }
+.panel.active .card:nth-child(1) { animation-delay: 0.05s; }
+.panel.active .card:nth-child(2) { animation-delay: 0.1s; }
+.panel.active .card:nth-child(3) { animation-delay: 0.15s; }
+.panel.active .card:nth-child(4) { animation-delay: 0.2s; }
+@keyframes cardIn {
+  from { opacity:0; transform:translateY(16px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* Loading shimmer */
+.loading-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(2px);
+  border-radius: var(--radius);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+.loading-overlay.show { display: flex; }
+.loading-spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--navy);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.main { position: relative; }
+
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.breadcrumbs span { color: var(--muted); }
+.breadcrumbs .current { color: var(--navy); font-weight: 600; }
+.breadcrumbs .sep { color: #ccc; font-size: 10px; }
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(16px, 3vw, 22px);
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s;
+}
+.card:hover { box-shadow: var(--shadow-md); }
+.card-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.card-icon {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.card-icon svg { width: 20px; height: 20px; color: #fff; fill: none; stroke: #fff; stroke-width: 1.8; }
+.card-title { font-size: clamp(15px, 2.5vw, 16px); font-weight: 700; color: var(--navy); }
+.card-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+/* ===== INFO GRID ===== */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.info-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: clamp(12.5px, 2vw, 13.5px);
+  gap: 8px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-label { color: var(--muted); flex-shrink: 0; }
+.info-val { font-weight: 600; color: var(--text); text-align: left; }
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+  white-space: nowrap;
+}
+.badge-green { background: var(--success-bg); color: var(--success); }
+.badge-gold { background: var(--gold-light); color: #9a6c15; }
+.badge-navy { background: #e8f0f8; color: var(--navy); }
+.badge-red { background: #fff0ef; color: var(--danger); }
+
+/* ===== TIMELINE ===== */
+.timeline { padding-right: 24px; position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute; right: 7px; top: 6px; bottom: 6px;
+  width: 2px; background: var(--border);
+}
+.tl-item { position: relative; margin-bottom: 22px; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-dot {
+  position: absolute; right: -24px; top: 4px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 2px var(--border);
+  transition: transform 0.3s;
+}
+.tl-item:hover .tl-dot { transform: scale(1.2); }
+.tl-dot.done { background: var(--success); box-shadow: 0 0 0 2px #c8e6c9; }
+.tl-dot.pending { background: var(--gold); box-shadow: 0 0 0 2px #ffe0b2; }
+.tl-dot.upcoming { background: #b0bec5; }
+.tl-content { padding-right: 4px; }
+.tl-title { font-size: clamp(13px, 2vw, 14px); font-weight: 600; color: var(--text); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.tl-sub { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.tl-flag {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 10px; font-size: 11px;
+}
+.flag-done { background: var(--success-bg); color: var(--success); }
+.flag-pending { background: #fff8e1; color: #856404; }
+.flag-upcoming { background: #f5f5f5; color: #757575; }
+
+/* ===== LETTER ===== */
+.letter {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-right: 4px solid var(--navy);
+  border-radius: var(--radius);
+  padding: clamp(20px, 4vw, 28px);
+  line-height: 1.9;
+  font-size: clamp(13px, 2vw, 14px);
+}
+.bismillah { text-align: center; font-size: clamp(16px, 3vw, 18px); font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+.letter p { margin-bottom: 14px; }
+.hadith {
+  background: var(--gold-light);
+  border-right: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: clamp(13px, 2vw, 13.5px); font-style: italic;
+  color: #7a5a20;
+  margin: 18px 0;
+  line-height: 1.8;
+}
+.hl { color: var(--navy); font-weight: 700; }
+
+/* ===== BUDGET ===== */
+.budget-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+.b-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(14px, 2vw, 16px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.b-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.b-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0; left: 0;
+  height: 3px;
+}
+.b-card.c1::before { background: var(--navy); }
+.b-card.c2::before { background: var(--gold); }
+.b-card.c3::before { background: #378add; }
+.b-card.c4::before { background: #90a4ae; }
+.b-card .bamt { font-size: clamp(18px, 3vw, 20px); font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.b-card .blbl { font-size: 11px; color: var(--muted); line-height: 1.5; }
+.budget-total {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  border-radius: var(--radius);
+  padding: clamp(16px, 3vw, 18px) clamp(18px, 3vw, 22px);
+  display: flex; justify-content: space-between; align-items: center;
+  color: #fff;
+  gap: 12px;
+}
+.bt-label { font-size: clamp(13px, 2vw, 14px); color: rgba(255,255,255,0.75); }
+.bt-val { font-size: clamp(20px, 3.5vw, 22px); font-weight: 700; color: var(--gold-mid); white-space: nowrap; }
+.chart-area {
+  display: flex; align-items: center; gap: 24px;
+  padding: 16px 0;
+}
+.chart-wrap { flex-shrink: 0; }
+.chart-wrap canvas { max-width: 170px; max-height: 170px; width: 100%; height: auto; }
+.chart-legend { flex: 1; }
+.legend-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px; font-size: clamp(12px, 2vw, 13px);
+}
+.legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+.legend-name { flex: 1; color: var(--text); }
+.legend-pct { color: var(--muted); font-size: 12px; font-weight: 600; }
+.legend-amt { font-weight: 600; color: var(--navy); white-space: nowrap; }
+
+/* ===== SLIDER ===== */
+.slider-wrap {
+  position: relative;
+  padding: 32px 0 12px;
+  margin: 4px 0;
+}
+.slider-bubble {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(10,47,92,0.25);
+  transition: left 0.05s linear;
+}
+.slider-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--navy);
+}
+.slider-label { font-size: clamp(12px, 2vw, 13px); color: var(--muted); margin-bottom: 4px; }
+input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: linear-gradient(to left, var(--gold) var(--pct, 0%), var(--border) var(--pct, 0%));
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  touch-action: none;
+  position: relative;
+  z-index: 1;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to left, var(--gold) var(--pct, 0%), var(--border) var(--pct, 0%));
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+  margin-top: -10px;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  box-shadow: 0 2px 12px rgba(10,47,92,0.4);
+  transform: scale(1.08);
+}
+input[type=range]::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to left, var(--gold) var(--pct, 0%), var(--border) var(--pct, 0%));
+}
+input[type=range]::-moz-range-thumb {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+.slider-result {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 18px;
+  padding: 16px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.sr-group { text-align: center; }
+.sr-val { font-size: clamp(17px, 3vw, 20px); font-weight: 700; color: var(--navy); }
+.sr-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+/* ===== DOCS ===== */
+.docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.doc-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(18px, 3vw, 22px);
+  cursor: pointer;
+  transition: all 0.25s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.doc-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0; left: 0;
+  height: 4px;
+  background: var(--navy);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+  transform-origin: right;
+}
+.doc-card:hover { border-color: var(--navy); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(10,47,92,0.12); }
+.doc-card:hover::before { transform: scaleX(1); }
+.doc-card .dc-icon {
+  width: clamp(48px, 8vw, 56px); height: clamp(48px, 8vw, 56px);
+  background: linear-gradient(135deg, #e8f0f8 0%, #d4e3f0 100%);
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.doc-card .dc-icon svg { width: clamp(24px, 4vw, 28px); height: clamp(24px, 4vw, 28px); stroke: var(--navy); fill: none; stroke-width: 1.6; }
+.doc-card .dc-name { font-size: clamp(13px, 2vw, 14px); font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.doc-card .dc-uni { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; }
+.doc-card .dc-meta {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--gold-light); color: #9a6c15;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; margin-bottom: 14px;
+}
+.view-btn {
+  width: 100%;
+  padding: clamp(9px, 2vw, 10px) clamp(14px, 2vw, 16px);
+  background: var(--navy);
+  color: #fff;
+  border: none; border-radius: 9px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+}
+.view-btn:hover { background: var(--navy2); }
+.view-btn svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2; }
+
+/* ===== SPONSOR ===== */
+.sponsor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+.sp-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(16px, 3vw, 20px);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+.sp-card:hover { border-color: var(--navy); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.sp-card.selected { border-color: var(--navy); background: #f0f5fa; }
+.sp-card.featured { border-color: var(--gold); }
+.sp-card.featured:hover { box-shadow: 0 4px 20px rgba(200,151,58,0.2); }
+.sp-badge {
+  display: inline-flex;
+  background: var(--gold); color: #fff;
+  padding: 3px 10px; border-radius: 10px;
+  font-size: 11px; font-weight: 600;
+  margin-bottom: 10px;
+}
+.sp-amt { font-size: clamp(20px, 4vw, 24px); font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.sp-lbl { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.sp-desc { font-size: clamp(12px, 2vw, 12.5px); color: var(--text); line-height: 1.6; }
+.sp-custom { margin-top: 20px; }
+.action-btn {
+  width: 100%; padding: clamp(12px, 2.5vw, 14px);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  color: #fff; border: none; border-radius: 12px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: clamp(14px, 2.5vw, 15px); font-weight: 700;
+  cursor: pointer; margin-top: 18px;
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 4px 16px rgba(10,47,92,0.25);
+}
+.action-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(10,47,92,0.35); }
+.action-btn svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; }
+
+/* ===== CONTACT ===== */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.contact-btn {
+  display: flex; align-items: center; gap: 10px;
+  padding: clamp(12px, 2.5vw, 14px) clamp(14px, 2.5vw, 16px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+  transition: all 0.2s;
+}
+.contact-btn:hover { border-color: var(--navy); background: #f0f5fa; color: var(--navy); transform: translateY(-1px); }
+.contact-btn .cb-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: #e8f0f8;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-btn .cb-icon svg { width: 18px; height: 18px; stroke: var(--navy); fill: none; stroke-width: 1.8; }
+.contact-btn .cb-lbl { font-size: 11px; color: var(--muted); }
+.contact-btn .cb-val { font-weight: 600; font-size: clamp(12px, 2vw, 13px); word-break: break-all; }
+
+/* ===== FOOTER ===== */
+.footer { text-align: center; padding: 28px 20px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.footer .footer-line { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 16px; border-radius: 2px; }
+
+/* ===== RESPONSIVE: TABLET (iPad, ≤1024px) ===== */
+@media (max-width: 1024px) {
+  .header { padding: 32px 0 30px; }
+  .main { padding: 24px 16px; }
+  .tabs-wrap { padding-left: 16px; padding-right: 16px; }
+  .header-inner { padding-left: 16px; padding-right: 16px; }
+  .info-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .budget-cards { grid-template-columns: repeat(2, 1fr); }
+  .sponsor-grid { grid-template-columns: repeat(3, 1fr); }
+  .chart-area { gap: 18px; }
+  .chart-wrap canvas { max-width: 140px; max-height: 140px; }
+}
+
+/* ===== RESPONSIVE: TABLET SMALL (≤768px) ===== */
+@media (max-width: 768px) {
+  .header { padding: 32px 0 28px; }
+  .hero { flex-direction: column; text-align: center; gap: 24px; }
+  .hero-image { order: -1; }
+  .hero-desc { max-width: 100%; }
+  .hero-img { width: 110px; height: 110px; }
+  .hero-img-wrap { width: 126px; height: 126px; }
+  .hero-name { font-size: clamp(20px, 5vw, 24px); }
+  .stats-row { grid-template-columns: 1fr; gap: 10px; }
+  .main { padding: 20px 14px; }
+  .tabs-wrap { padding-left: 14px; padding-right: 14px; }
+  .header-inner { padding-left: 14px; padding-right: 14px; }
+  .nav-tabs { gap: 6px; padding: 6px; border-radius: 0 0 12px 12px; }
+  .nav-tab { padding: 12px 12px; font-size: 12px; }
+  .nav-tab svg { width: 15px; height: 15px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .info-val { text-align: right; }
+  .budget-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .chart-area { flex-direction: column; align-items: center; gap: 16px; }
+  .chart-wrap canvas { max-width: 160px; max-height: 160px; }
+  .docs-grid { grid-template-columns: 1fr; }
+  .sponsor-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .slider-result { grid-template-columns: repeat(2, 1fr); }
+  .letter { padding: 18px; }
+}
+
+/* ===== RESPONSIVE: MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+  .header { padding: 24px 0 20px; }
+  .hero { flex-direction: column; text-align: center; gap: 20px; }
+  .hero-image { order: -1; }
+  .hero-desc { max-width: 100%; }
+  .hero-img { width: 100px; height: 100px; }
+  .hero-img-wrap { width: 116px; height: 116px; }
+  .hero-name { font-size: 20px; }
+  .hero-badge { font-size: 11px; }
+  .stats-row { grid-template-columns: 1fr; gap: 8px; }
+  .main { padding: 16px 12px; }
+  .tabs-wrap { padding-left: 12px; padding-right: 12px; }
+  .header-inner { padding-left: 12px; padding-right: 12px; }
+  .nav-tabs { border-radius: 0 0 10px 10px; }
+  .nav-tab { padding: 8px 5px; font-size: 11px; }
+  .nav-tab svg { width: 14px; height: 14px; }
+  .card { padding: 14px; margin-bottom: 14px; }
+  .card-header { gap: 10px; margin-bottom: 14px; padding-bottom: 10px; }
+  .card-icon { width: 34px; height: 34px; border-radius: 10px; }
+  .card-icon svg { width: 17px; height: 17px; }
+  .budget-cards { gap: 8px; }
+  .b-card { padding: 12px; }
+  .budget-total { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .info-row { font-size: 12.5px; padding: 8px 0; }
+  .timeline { padding-right: 20px; }
+  .tl-dot { right: -20px; width: 14px; height: 14px; }
+  .tl-title { font-size: 12.5px; }
+  .tl-sub { font-size: 11px; }
+  .slider-result { grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 12px 8px; }
+  .sr-val { font-size: 16px; }
+  .doc-card { padding: 16px; }
+  .doc-card .dc-icon { width: 44px; height: 44px; }
+  .doc-card .dc-icon svg { width: 22px; height: 22px; }
+  .sp-card { padding: 14px; }
+  .sp-amt { font-size: 20px; }
+  .contact-grid { gap: 10px; }
+  .contact-btn { padding: 12px 14px; }
+  .letter { padding: 14px; line-height: 1.8; }
+  .footer { padding: 22px 16px; font-size: 11px; }
+}
+
+/* ===== RESPONSIVE: LAPTOP (1025px–1400px) ===== */
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .tabs-wrap, .header-inner, .main { max-width: 920px; }
+}
+
+/* ===== LARGE SCREENS (>1400px) ===== */
+
+@media print {
+  .nav-tabs { display: none; }
+  .panel { display: block !important; }
+  .card:hover, .b-card:hover, .doc-card:hover, .sp-card:hover, .contact-btn:hover { transform: none !important; box-shadow: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TABS TOP -->
+<div class="tabs-wrap">
+<div class="nav-tabs">
+  <button class="nav-tab active" onclick="showTab('profile',this)" title="السيرة الأكاديمية والمعلومات الشخصية">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    الملف الشخصي
+  </button>
+  <button class="nav-tab" onclick="showTab('letter',this)" title="خطاب طلب الكفالة التعليمية">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    خطاب الطلب
+  </button>
+  <button class="nav-tab" onclick="showTab('budget',this)" title="تفاصيل الميزانية السنوية والمساهمة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    الميزانية
+  </button>
+  <button class="nav-tab" onclick="showTab('docs',this)" title="المستندات الرسمية والوثائق المعتمدة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    المستندات
+  </button>
+
+</div>
+</div>
+
+<!-- HERO HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="hero">
+      <div class="hero-image">
+        <div class="hero-img-wrap">
+          <div class="hero-img-ring"></div>
+          <img src="Images/Image.jpeg" alt="صورة الطالب" class="hero-img">
+        </div>
+      </div>
+      <div class="hero-info">
+        <div class="hero-badge">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          ملف الرعاية التعليمية · 2026
+        </div>
+        <h1 class="hero-name">عبدالرحمن رحمة الله رحيم الدين</h1>
+        <p class="hero-desc">طالب علم · قبول رسمي في كلية العلوم الصحية · تخصص التمريض · جامعة كارابوك الحكومية · جمهورية تركيا</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="stat-card-body">
+          <span class="stat-card-label">معدل الثانوية</span>
+          <span class="stat-card-value"><span class="gold">95.21%</span></span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/><path d="M3 7l9 5 9-5"/></svg>
+        </div>
+        <div class="stat-card-body">
+          <span class="stat-card-label">كفاءة اللغة التركية</span>
+          <span class="stat-card-value"><span class="gold">C1 متقدم</span></span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="stat-card-body">
+          <span class="stat-card-label">آخر موعد التسجيل</span>
+          <span class="stat-card-value"><span class="red">31 يوليو 2026</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>اكتمال ملف الجاهزية الأكاديمية</span>
+        <span id="pctLbl">0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" id="breadcrumbs">
+    <span>الرئيسية</span>
+    <span class="sep">›</span>
+    <span class="current" id="bcCurrent">الملف الشخصي</span>
+  </div>
+
+  <!-- PANEL: PROFILE -->
+  <div class="panel active" id="panel-profile">
+    <div class="info-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <div>
+            <div class="card-title">البيانات الشخصية</div>
+            <div class="card-sub">معلومات الهوية الأكاديمية</div>
+          </div>
+        </div>
+        <div class="info-row"><span class="info-label">الاسم الكامل</span><span class="info-val">عبدالرحمن رحمة الله رحيم الدين</span></div>
+
+        <div class="info-row"><span class="info-label">تاريخ الميلاد</span><span class="info-val">04 يناير 2003</span></div>
+        <div class="info-row"><span class="info-label">الجنسية</span><span class="info-val">أفغانستان</span></div>
+        <div class="info-row"><span class="info-label">رقم المرشح</span><span class="info-val">25071731</span></div>
+        <div class="info-row"><span class="info-label">معدل الثانوية</span><span class="info-val"><span class="badge badge-green">95.21% · ممتاز</span></span></div>
+        <div class="info-row"><span class="info-label">كفاءة اللغة التركية</span><span class="info-val"><span class="badge badge-gold">C1 متقدم · درجة 66</span></span></div>
+        <div class="info-row"><span class="info-label">شهادة Coursera</span><span class="info-val"><span class="badge badge-navy">Google Technical Support</span></span></div>
+        <div class="info-row"><span class="info-label">اختبار القدرات (قياس)</span><span class="info-val"><span class="badge badge-navy">إجمالي 88 · لفظي 87.1</span></span></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <div class="card-title">تفاصيل القبول</div>
+            <div class="card-sub">جامعة كارابوك الحكومية · 2026</div>
+          </div>
+        </div>
+        <div class="info-row"><span class="info-label">الجامعة</span><span class="info-val">Karabük Üniversitesi</span></div>
+        <div class="info-row"><span class="info-label">الكلية</span><span class="info-val">كلية العلوم الصحية</span></div>
+        <div class="info-row"><span class="info-label">التخصص</span><span class="info-val"><span class="badge badge-navy">التمريض (HEMŞİRELİK)</span></span></div>
+        <div class="info-row"><span class="info-label">رقم اليوك (YÖK ID)</span><span class="info-val">081-7AC-89</span></div>
+        <div class="info-row"><span class="info-label">تاريخ القبول</span><span class="info-val">18 مايو 2026</span></div>
+        <div class="info-row"><span class="info-label">درجة القبول</span><span class="info-val">71.4075</span></div>
+        <div class="info-row"><span class="info-label">بداية التسجيل</span><span class="info-val">18 مايو 2026</span></div>
+        <div class="info-row"><span class="info-label">انتهاء التسجيل</span><span class="info-val"><span class="badge badge-red">31 يوليو 2026</span></span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div><div class="card-title">مراحل الرحلة الأكاديمية</div></div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot done"></div>
+          <div class="tl-content">
+            <div class="tl-title">التخرج من الثانوية بمعدل ممتاز <span class="tl-flag flag-done">✓ مكتمل</span></div>
+            <div class="tl-sub">معدل 95.21% · المملكة العربية السعودية · نظام الفصول الدراسية</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot done"></div>
+          <div class="tl-content">
+            <div class="tl-title">اجتياز اختبار القدرات (قياس) <span class="tl-flag flag-done">✓ مكتمل</span></div>
+            <div class="tl-sub">إجمالي 88 · لفظي 87.1 · رياضي 88.0 · المركز الوطني للقياس</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot done"></div>
+          <div class="tl-content">
+            <div class="tl-title">الحصول على شهادة اللغة التركية C1 <span class="tl-flag flag-done">✓ مكتمل</span></div>
+            <div class="tl-sub">Bartın TÖMER · درجة 66 · معافاة تامة من السنة التحضيرية</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot done"></div>
+          <div class="tl-content">
+            <div class="tl-title">شهادة Google Technical Support من Coursera <span class="tl-flag flag-done">✓ مكتمل</span></div>
+            <div class="tl-sub">أغسطس 2022 · كود التحقق: MA5BZ6RXBZQU</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot done"></div>
+          <div class="tl-content">
+            <div class="tl-title">قبول رسمي في جامعة كارابوك <span class="tl-flag flag-done">✓ مكتمل</span></div>
+            <div class="tl-sub">تخصص التمريض · كلية العلوم الصحية · YÖK ID: 081-7AC-89</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot pending"></div>
+          <div class="tl-content">
+            <div class="tl-title">تأمين التمويل الدراسي <span class="tl-flag flag-pending">⏳ قيد الانتظار</span></div>
+            <div class="tl-sub">الميزانية السنوية المطلوبة: ~6,950$ · هذا هو العائق الوحيد</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot upcoming"></div>
+          <div class="tl-content">
+            <div class="tl-title">السفر والتسجيل الرسمي والبدء <span class="tl-flag flag-upcoming">📅 الموعد: 31 يوليو 2026</span></div>
+            <div class="tl-sub">التسجيل بين 18 مايو و31 يوليو 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+        <div><div class="card-title">بيانات التواصل</div></div>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+966578935038" class="contact-btn">
+          <div class="cb-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8"/></svg></div>
+          <div><div class="cb-lbl">الهاتف</div><div class="cb-val" dir="ltr">+966 57 893 5038</div></div>
+        </a>
+        <a href="mailto:balfarsy985@gmail.com" class="contact-btn">
+          <div class="cb-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div><div class="cb-lbl">البريد الإلكتروني</div><div class="cb-val">balfarsy985@gmail.com</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL: LETTER -->
+  <div class="panel" id="panel-letter">
+    <div class="letter">
+      <div class="bismillah">بسم الله الرحمن الرحيم</div>
+      <p style="font-weight:700;color:var(--navy);font-size:15px;">الموضوع: طلب رعاية وكفالة تعليمية لطالب علم في تخصص التمريض</p>
+      <p><strong>السلام عليكم ورحمة الله وبركاته،</strong></p>
+      <p>أتوجه إليكم بهذا الخطاب وكلي رجاء في تجارة رابحة مع الله، عبر دعم وتيسير طريق طالب علم يسعى لخدمة الأمة والإنسانية في أحد أنبل التخصصات الطبية، مستنداً إلى قول رسولنا الكريم ﷺ:</p>
+      <div class="hadith">«مَن نَفَّسَ عن مُؤْمِنٍ كُرْبَةً مِن كُرَبِ الدُّنْيَا، نَفَّسَ اللَّهُ عنْه كُرْبَةً مِن كُرَبِ يَومِ القِيَامَةِ» — رواه مسلم</div>
+      <p>أنا الطالب <span class="hl">عبدالرحمن رحمة الله رحيم الدين</span>، حظيت بفضل الله وتوفيقه بقبول رسمي في <span class="hl">جامعة كارابوك الحكومية بجمهورية تركيا</span> لدراسة تخصص <span class="hl">التمريض - كلية العلوم الصحية</span> بمعدل ثانوية عامة متميز بلغ <span class="hl">95.21%</span>.</p>
+      <p>وامتداداً لجهدي وحرصي على استغلال الوقت، فقد تمكنت مسبقاً من اجتياز واكتساب <span class="hl">شهادة الكفاءة في اللغة التركية بمستوى C1 المتقدم من جامعة بارتن الحكومية</span>، مما يؤهلني لدخول التخصص مباشرة ودون تكبد رسوم أو سنوات إضافية لتعلم اللغة.</p>
+      <p>ورغم جدارتي الأكاديمية وتحملي الشخصي لكامل مصاريف التأسيس والفيزا وتذاكر السفر، فإن القدرة المادية تقف عائقاً أمام توفير المصاريف التشغيلية السنوية للدراسة والمعيشة؛ حيث تبلغ الكلفة الإجمالية المقدرة للسنة الدراسية الواحدة حوالي <span class="hl">6,950 دولار أمريكي</span> (ما يعادل 235,000 ليرة تركية).</p>
+      <p>إنني أطمع في كرمكم بتبني كفالتي الدراسية (سواء كفالة كاملة أو مساهمة جزئية) لتمكيني من اللحاق بمقعدي الدراسي وبدء الدراسة قبل انتهاء مهلة التسجيل النهائي في <span class="hl">31 يوليو 2026</span>.</p>
+      <p>مرفق لكم طيه جميع وثائقي الرسمية الموثقة: وثيقة القبول المعتمدة، شهادة اللغة التركية C1، شهادة الثانوية العامة، وشهادة اختبار القدرات. شاكراً لكم أريحيتكم وحسن تعاطفكم.</p>
+      <p style="color:var(--muted);font-size:13px;margin-top:24px;border-top:1px solid var(--border);padding-top:16px;">
+        <strong>بيانات التواصل:</strong><br>
+        📞 +966 57 893 5038 &nbsp;|&nbsp; ✉️ balfarsy985@gmail.com
+      </p>
+    </div>
+  </div>
+
+
+
+  <!-- PANEL: DOCS -->
+  <div class="panel" id="panel-docs">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div><div class="card-title">المستندات الرسمية الموثقة</div><div class="card-sub">اضغط على أي مستند لفتحه في نافذة جديدة</div></div>
+      </div>
+      <div class="docs-grid">
+        <div class="doc-card" onclick="window.open(pdfFiles.accept, '_blank')">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="dc-name">خطاب القبول الجامعي</div>
+          <div class="dc-uni">Karabük Üniversitesi · 10 مايو 2026</div>
+          <div class="dc-meta">YÖK ID: 081-7AC-89</div>
+          <button class="view-btn">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            عرض المستند
+          </button>
+        </div>
+
+        <div class="doc-card" onclick="window.open(pdfFiles.turkish, '_blank')">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/><path d="M3 7l9 5 9-5"/></svg>
+          </div>
+          <div class="dc-name">شهادة اللغة التركية C1</div>
+          <div class="dc-uni">Bartın Üniversitesi · TÖMER</div>
+          <div class="dc-meta">درجة 66 · معافاة تامة</div>
+          <button class="view-btn">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            عرض المستند
+          </button>
+        </div>
+
+        <div class="doc-card" onclick="window.open(pdfFiles.qual, '_blank')">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="dc-name">المؤهلات العلمية</div>
+          <div class="dc-uni">وزارة التعليم السعودية · مركز قياس</div>
+          <div class="dc-meta">ثانوية 95.21% · قياس 88</div>
+          <button class="view-btn">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            عرض المستند
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL: BUDGET -->
+  <div class="panel" id="panel-budget">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div><div class="card-title">تفاصيل الميزانية السنوية</div><div class="card-sub">تكاليف موثقة ومعتمدة</div></div>
+      </div>
+      <div class="budget-cards">
+        <div class="b-card c1">
+          <div class="bamt">$1,350</div>
+          <div class="blbl">الرسوم الجامعية<br>45,000 TL</div>
+        </div>
+        <div class="b-card c2">
+          <div class="bamt">$4,100</div>
+          <div class="blbl">السكن والفواتير<br>140,000 TL</div>
+        </div>
+        <div class="b-card c3">
+          <div class="bamt">$1,350</div>
+          <div class="blbl">المعيشة والكتب<br>45,000 TL</div>
+        </div>
+        <div class="b-card c4">
+          <div class="bamt">$150</div>
+          <div class="blbl">إقامة وتأمين<br>5,000 TL</div>
+        </div>
+      </div>
+      <div class="chart-area">
+        <div class="chart-wrap">
+          <canvas id="donutChart" width="170" height="170"></canvas>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-row"><div class="legend-dot" style="background:#0a2f5c"></div><span class="legend-name">السكن والفواتير</span><span class="legend-pct">59%</span><span class="legend-amt">$4,100</span></div>
+          <div class="legend-row"><div class="legend-dot" style="background:#c8973a"></div><span class="legend-name">الرسوم الجامعية</span><span class="legend-pct">19%</span><span class="legend-amt">$1,350</span></div>
+          <div class="legend-row"><div class="legend-dot" style="background:#378add"></div><span class="legend-name">المعيشة والكتب</span><span class="legend-pct">19%</span><span class="legend-amt">$1,350</span></div>
+          <div class="legend-row"><div class="legend-dot" style="background:#90a4ae"></div><span class="legend-name">إقامة وتأمين</span><span class="legend-pct">3%</span><span class="legend-amt">$150</span></div>
+        </div>
+      </div>
+      <div class="budget-total">
+        <div><div class="bt-label">الإجمالي السنوي المطلوب</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px">235,000 ليرة تركية</div></div>
+        <div class="bt-val">~$6,950</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div>
+        <div><div class="card-title">احسب مساهمتك الشهرية</div></div>
+      </div>
+      <div class="slider-label">اختر نسبة تغطية الميزانية السنوية:</div>
+      <div class="slider-wrap">
+        <div class="slider-bubble" id="budgetBubble">0%</div>
+        <input type="range" min="0" max="100" step="5" value="0" id="budgetSlider" oninput="updateBudget(this.value)">
+      </div>
+      <div class="slider-result">
+        <div class="sr-group"><div class="sr-val" id="pctDisplay">0%</div><div class="sr-lbl">النسبة</div></div>
+        <div class="sr-group"><div class="sr-val" id="annualDisplay">$0</div><div class="sr-lbl">سنوياً</div></div>
+        <div class="sr-group"><div class="sr-val" id="monthlyDisplay">$0</div><div class="sr-lbl">شهرياً</div></div>
+        <div class="sr-group"><div class="sr-val" id="tlDisplay">0</div><div class="sr-lbl">ليرة تركية</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line"></div>
+  تم إعداد هذا الملف بشكل رسمي وموثق بناءً على وثائق الطالب الرسمية · 2026<br>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+// PDF file paths
+var pdfFiles = {
+  accept: 'Karabuk.pdf',
+  turkish: 'Turkish Certificate.pdf',
+  qual: 'qualification.pdf'
+};
+
+// TABS with smooth transitions
+var tabNames = { profile:'الملف الشخصي', letter:'خطاب الطلب', docs:'المستندات', budget:'الميزانية' };
+var transitioning = false;
+function showTab(name, btn) {
+  if (transitioning) return;
+  var panel = document.getElementById('panel-' + name);
+  if (!panel || panel.classList.contains('active')) return;
+  transitioning = true;
+
+  var oldPanel = document.querySelector('.panel.active');
+  if (oldPanel) {
+    oldPanel.classList.remove('active');
+    oldPanel.classList.add('exiting');
+    setTimeout(function() {
+      oldPanel.classList.remove('exiting');
+      oldPanel.style.display = 'none';
+    }, 300);
+  }
+
+  panel.style.display = 'block';
+  panel.classList.add('entering');
+  requestAnimationFrame(function() {
+    panel.classList.remove('entering');
+    panel.classList.add('active');
+  });
+
+  document.querySelectorAll('.nav-tab').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+
+  document.getElementById('bcCurrent').textContent = tabNames[name] || name;
+
+  setTimeout(function() { transitioning = false; }, 400);
+
+  if (name === 'budget') { initChart(); initSliders(); }
+}
+function initSliders() {
+  var bs = document.getElementById('budgetSlider');
+  if (bs && bs.offsetParent !== null) updateBudget(bs.value);
+}
+
+// CHART
+var chartDone = false;
+function initChart() {
+  if (chartDone) return; chartDone = true;
+  var ctx = document.getElementById('donutChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [4100, 1350, 1350, 150],
+        backgroundColor: ['#0a2f5c','#c8973a','#378add','#90a4ae'],
+        borderWidth: 3, borderColor: '#fff'
+      }]
+    },
+    options: {
+      cutout: '70%',
+      plugins: { legend: { display: false }, tooltip: {
+        rtl: true,
+        callbacks: { label: function(c) { return ' $' + c.raw.toLocaleString(); } }
+      } },
+      animation: { duration: 1000 }
+    }
+  });
+}
+
+// BUDGET SLIDER
+function positionBubble(slider, bubble) {
+  var rect = slider.getBoundingClientRect();
+  if (!rect || rect.width === 0) return;
+  var prect = slider.parentElement.getBoundingClientRect();
+  var ratio = (slider.value - slider.min) / (slider.max - slider.min);
+  var thumbWidth = 26;
+  var track = rect.width - thumbWidth;
+  var thumbCenterLeft = (1 - ratio) * track + thumbWidth / 2;
+  var x = rect.left - prect.left + thumbCenterLeft;
+  bubble.style.left = Math.round(x) + 'px';
+  // Sync gold fill: gold ends exactly at thumb center (RTL: fill from right)
+  var goldPct = Math.round((1 - thumbCenterLeft / rect.width) * 100);
+  slider.style.setProperty('--pct', goldPct + '%');
+}
+function updateBudget(v) {
+  var annual = Math.round(6950 * v / 100);
+  var monthly = Math.round(annual / 12);
+  var tl = Math.round(annual * 33.8);
+  document.getElementById('pctDisplay').textContent = v + '%';
+  document.getElementById('annualDisplay').textContent = '$' + annual.toLocaleString();
+  document.getElementById('monthlyDisplay').textContent = '$' + monthly.toLocaleString();
+  document.getElementById('tlDisplay').textContent = tl.toLocaleString();
+  var slider = document.getElementById('budgetSlider');
+  var bubble = document.getElementById('budgetBubble');
+  bubble.textContent = v + '%';
+  positionBubble(slider, bubble);
+}
+
+// SPONSOR
+// SMOOTH SLIDER ANIMATION
+function smoothSliderTo(slider, target, duration, updateFn) {
+  var start = parseFloat(slider.value);
+  var mn = parseFloat(slider.min) || 0;
+  var mx = parseFloat(slider.max) || 100;
+  var range = mx - mn;
+  var startTime = null;
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    var elapsed = ts - startTime;
+    var t = Math.min(1, elapsed / duration);
+    var ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    var val = Math.round(start + (target - start) * ease);
+    val = Math.max(mn, Math.min(mx, val));
+    slider.value = val;
+    if (updateFn) updateFn(val);
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// PAGE LOAD
+window.addEventListener('load', function() {
+  initSliders();
+  setTimeout(function() {
+    var fill = document.getElementById('progFill');
+    var lbl = document.getElementById('pctLbl');
+    var target = 75, cur = 0;
+    var t = setInterval(function() {
+      cur = Math.min(cur + 1, target);
+      fill.style.width = cur + '%';
+      lbl.textContent = cur + '%';
+      if (cur >= target) clearInterval(t);
+    }, 18);
+  }, 500);
+  function posAll() {
+    var bs = document.getElementById('budgetSlider');
+    if (bs && bs.offsetParent !== null) positionBubble(bs, document.getElementById('budgetBubble'));
+  }
+  window.addEventListener('resize', posAll);
+});
+</script>
+</body>
+</html>
