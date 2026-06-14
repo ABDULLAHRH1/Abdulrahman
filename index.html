@@ -1551,60 +1551,7 @@ input[type=range]::-moz-range-thumb {
     </div>
 
     <!-- Sponsorship levels -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-icon" style="background:rgba(200,151,58,0.1);color:#c8973a;">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <div><div class="card-title">مستويات المساهمة المقترحة</div><div class="card-sub">بادر بدعم مسيرة طالب علم</div></div>
-      </div>
-      <div class="sponsor-tiers">
-        <div class="st-tier" onclick="selectTier(25)">
-          <div class="st-pct">25%</div>
-          <div class="st-amt">$1,738</div>
-          <div class="st-lbl">مساهم</div>
-          <div class="st-desc">تغطية الرسوم الجامعية</div>
-        </div>
-        <div class="st-tier" onclick="selectTier(50)">
-          <div class="st-pct">50%</div>
-          <div class="st-amt">$3,475</div>
-          <div class="st-lbl">داعم</div>
-          <div class="st-desc">تغطية نصف التكاليف</div>
-        </div>
-        <div class="st-tier featured" onclick="selectTier(75)">
-          <div class="st-pct">75%</div>
-          <div class="st-amt">$5,213</div>
-          <div class="st-lbl">كفيل</div>
-          <div class="st-desc">التغطية الشاملة</div>
-        </div>
-        <div class="st-tier" onclick="selectTier(100)">
-          <div class="st-pct">100%</div>
-          <div class="st-amt">$6,950</div>
-          <div class="st-lbl">مؤسس</div>
-          <div class="st-desc">كفالة كاملة</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div>
-        <div><div class="card-title">احسب مساهمتك الشهرية</div></div>
-      </div>
-      <div class="slider-label">اختر نسبة تغطية الميزانية السنوية:</div>
-      <div class="slider-wrap">
-        <div class="slider-bubble" id="budgetBubble">0%</div>
-        <input type="range" min="0" max="100" step="5" value="0" id="budgetSlider" oninput="updateBudget(this.value)">
-      </div>
-      <div class="slider-result">
-        <div class="sr-group"><div class="sr-val" id="pctDisplay">0%</div><div class="sr-lbl">النسبة</div></div>
-        <div class="sr-group"><div class="sr-val" id="annualDisplay">$0</div><div class="sr-lbl">سنوياً</div></div>
-        <div class="sr-group"><div class="sr-val" id="monthlyDisplay">$0</div><div class="sr-lbl">شهرياً</div></div>
-        <div class="sr-group"><div class="sr-val" id="tlDisplay">0</div><div class="sr-lbl">ليرة تركية</div></div>
-      </div>
-    </div>
   </div>
-
 </div>
 
 <!-- Lightbox -->
