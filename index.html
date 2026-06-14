@@ -777,11 +777,12 @@ input[type=range]::-moz-range-thumb {
   padding: clamp(18px, 3vw, 22px);
   cursor: pointer;
   transition: all 0.25s;
-  text-align: center;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .doc-card::before {
   content: '';
@@ -799,16 +800,15 @@ input[type=range]::-moz-range-thumb {
   background: linear-gradient(135deg, #e8f0f8 0%, #d4e3f0 100%);
   border-radius: 16px;
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 14px;
 }
 .doc-card .dc-icon svg { width: clamp(24px, 4vw, 28px); height: clamp(24px, 4vw, 28px); stroke: var(--navy); fill: none; stroke-width: 1.6; }
-.doc-card .dc-name { font-size: clamp(13px, 2vw, 14px); font-weight: 700; color: var(--text); margin-bottom: 6px; }
-.doc-card .dc-uni { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; }
+.doc-card .dc-name { font-size: clamp(13px, 2vw, 14px); font-weight: 700; color: var(--text); text-align: center; }
+.doc-card .dc-uni { font-size: 11.5px; color: var(--muted); text-align: center; }
 .doc-card .dc-meta {
   display: inline-flex; align-items: center; gap: 5px;
   background: var(--gold-light); color: #9a6c15;
   padding: 4px 12px; border-radius: 20px;
-  font-size: 11px; font-weight: 600; margin-bottom: 14px;
+  font-size: 11px; font-weight: 600;
 }
 .view-btn {
   width: 100%;
@@ -1387,34 +1387,6 @@ input[type=range]::-moz-range-thumb {
         <strong>بيانات التواصل:</strong><br>
         📞 +966 57 893 5038 &nbsp;|&nbsp; ✉️ balfarsy985@gmail.com
       </p>
-    </div>
-
-    <!-- Action cards -->
-    <div class="letter-actions">
-      <div class="card la-card" onclick="window.open(pdfFiles.accept, '_blank')">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(10,47,92,0.1);color:var(--navy);">
-            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <div>
-            <div class="card-title">وثيقة القبول الرسمية</div>
-            <div class="card-sub">Karabük Üniversitesi · 2026</div>
-          </div>
-          <svg class="la-arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-      <div class="card la-card" onclick="showTab('budget', document.querySelectorAll('.nav-tab')[2])">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(200,151,58,0.1);color:#c8973a;">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <div>
-            <div class="card-title">تفاصيل الميزانية</div>
-            <div class="card-sub">تعرف على التكاليف السنوية بالتفصيل</div>
-          </div>
-          <svg class="la-arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>
     </div>
 
   </div>
