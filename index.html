@@ -1411,8 +1411,8 @@ input[type=range]::-moz-range-thumb {
     <!-- Document summary bar -->
     <div class="docs-summary">
       <div class="ds-item">
-        <div class="ds-val">8</div>
-        <div class="ds-lbl">ملف</div>
+        <div class="ds-val">4</div>
+        <div class="ds-lbl">مستندات</div>
       </div>
       <div class="ds-item">
         <div class="ds-val" style="color:#2e7d32;">PDF</div>
@@ -1435,23 +1435,9 @@ input[type=range]::-moz-range-thumb {
           <div class="dc-icon">
             <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
-          <div class="dc-name">خطاب القبول الجامعي</div>
+          <div class="dc-name">خطاب القبول</div>
           <div class="dc-uni">Karabük Üniversitesi · 10 مايو 2026</div>
           <div class="dc-meta">YÖK ID: 081-7AC-89</div>
-          <button class="view-btn">
-            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            عرض المستند
-          </button>
-        </div>
-
-        <div class="doc-card" onclick="window.open(pdfFiles.turkish, '_blank')">
-          <div class="dc-badge verified">موثق</div>
-          <div class="dc-icon">
-            <svg viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/><path d="M3 7l9 5 9-5"/></svg>
-          </div>
-          <div class="dc-name">شهادة اللغة التركية C1</div>
-          <div class="dc-uni">Bartın Üniversitesi · TÖMER</div>
-          <div class="dc-meta">درجة 66 · معافاة تامة</div>
           <button class="view-btn">
             <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             عرض المستند
@@ -1465,38 +1451,41 @@ input[type=range]::-moz-range-thumb {
           </div>
           <div class="dc-name">المؤهلات العلمية</div>
           <div class="dc-uni">وزارة التعليم السعودية · مركز قياس</div>
-          <div class="dc-meta">ثانوية 95.21% · قياس 88</div>
+          <div class="dc-meta">ثانوية 95.21% · قياس 88 · C1</div>
           <button class="view-btn">
             <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             عرض المستند
           </button>
         </div>
 
-      </div>
+        <div class="doc-card" onclick="window.open(pdfFiles.certAppreciation, '_blank')">
+          <div class="dc-badge verified">موثق</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="dc-name">شهادات الشكر والتقدير</div>
+          <div class="dc-uni">جهات ومؤسسات تعليمية</div>
+          <div class="dc-meta">5 شهادات موثقة</div>
+          <button class="view-btn">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            عرض المستند
+          </button>
+        </div>
 
-      <div class="card-divider"></div>
+        <div class="doc-card" onclick="window.open(pdfFiles.recLetters, '_blank')">
+          <div class="dc-badge verified">موثق</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/><path d="M3 7l9 5 9-5"/></svg>
+          </div>
+          <div class="dc-name">خطابات التوصية</div>
+          <div class="dc-uni">جهات أكاديمية ومشرفون</div>
+          <div class="dc-meta">توصيات معتمدة</div>
+          <button class="view-btn">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            عرض المستند
+          </button>
+        </div>
 
-      <div class="card-subheader">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <span>شهادات الشكر والتقدير</span>
-        <span class="subheader-count">5 صور</span>
-      </div>
-      <div class="certs-grid">
-        <div class="cert-card" onclick="openLightbox('Images/1.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/1.jpeg" alt="شهادة شكر وتقدير 1" class="cert-img" loading="lazy"></div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/2.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/2.jpeg" alt="شهادة شكر وتقدير 2" class="cert-img" loading="lazy"></div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/3.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/3.jpeg" alt="شهادة شكر وتقدير 3" class="cert-img" loading="lazy"></div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/4.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/4.jpeg" alt="شهادة شكر وتقدير 4" class="cert-img" loading="lazy"></div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/5.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/5.jpeg" alt="شهادة شكر وتقدير 5" class="cert-img" loading="lazy"></div>
-        </div>
       </div>
     </div>
   </div>
@@ -1563,8 +1552,9 @@ input[type=range]::-moz-range-thumb {
 // PDF file paths
 var pdfFiles = {
   accept: 'Karabuk.pdf',
-  turkish: 'Turkish Certificate.pdf',
-  qual: 'qualification.pdf'
+  qual: 'Educational Qualifications.pdf',
+  certAppreciation: 'Certificates of Appreciation.pdf',
+  recLetters: 'Letters of Recommendation.pdf'
 };
 
 // TABS with smooth transitions
