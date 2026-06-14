@@ -769,7 +769,7 @@ input[type=range]::-moz-range-thumb {
 .sr-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
 
 /* ===== DOCS ===== */
-.docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.docs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .doc-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -780,6 +780,8 @@ input[type=range]::-moz-range-thumb {
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .doc-card::before {
   content: '';
@@ -819,6 +821,7 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
   transition: all 0.2s;
   display: flex; align-items: center; justify-content: center; gap: 7px;
+  margin-top: auto;
 }
 .view-btn:hover { background: var(--navy2); }
 .view-btn svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2; }
@@ -892,12 +895,14 @@ input[type=range]::-moz-range-thumb {
 
 /* ===== RESPONSIVE: TABLET (iPad, ≤1024px) ===== */
 @media (max-width: 1024px) {
-  .header { padding: 32px 0 30px; }
-  .main { padding: 24px 16px; }
-  .tabs-wrap { padding-left: 16px; padding-right: 16px; }
-  .header-inner { padding-left: 16px; padding-right: 16px; }
+  .header { padding: 32px 0 28px; }
+  .main { padding: 22px 14px; }
+  .tabs-wrap { padding-left: 14px; padding-right: 14px; }
+  .header-inner { padding-left: 14px; padding-right: 14px; }
+  .nav-tab { padding: 12px 10px; font-size: 12px; }
   .info-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
   .budget-cards { grid-template-columns: repeat(2, 1fr); }
+  .docs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .sponsor-grid { grid-template-columns: repeat(3, 1fr); }
   .chart-area { gap: 18px; }
   .chart-wrap canvas { max-width: 140px; max-height: 140px; }
@@ -905,35 +910,34 @@ input[type=range]::-moz-range-thumb {
 
 /* ===== RESPONSIVE: TABLET SMALL (≤768px) ===== */
 @media (max-width: 768px) {
-  .header { padding: 32px 0 28px; }
-  .hero { flex-direction: column; text-align: center; gap: 24px; }
+  .header { padding: 28px 0 24px; }
+  .hero { flex-direction: column; text-align: center; gap: 20px; }
   .hero-image { order: -1; }
-  .hero-desc { max-width: 100%; }
-  .hero-img { width: 110px; height: 110px; }
-  .hero-img-wrap { width: 126px; height: 126px; }
+  .hero-desc { max-width: 100%; font-size: 14px; }
+  .hero-img { width: 100px; height: 100px; }
+  .hero-img-wrap { width: 116px; height: 116px; }
   .hero-name { font-size: clamp(20px, 5vw, 24px); }
   .stats-row { grid-template-columns: 1fr; gap: 10px; }
-  .main { padding: 20px 14px; }
-  .tabs-wrap { padding-left: 14px; padding-right: 14px; }
-  .header-inner { padding-left: 14px; padding-right: 14px; }
-  .nav-tabs { gap: 6px; padding: 6px; border-radius: 0 0 12px 12px; }
-  .nav-tab { padding: 12px 12px; font-size: 12px; }
-  .nav-tab svg { width: 15px; height: 15px; }
+  .main { padding: 18px 12px; }
+  .tabs-wrap { padding-left: 12px; padding-right: 12px; }
+  .header-inner { padding-left: 12px; padding-right: 12px; }
+  .nav-tabs { gap: 5px; padding: 5px; border-radius: 0 0 12px 12px; }
+  .nav-tab { padding: 10px 8px; font-size: 11px; gap: 5px; }
+  .nav-tab svg { width: 14px; height: 14px; }
+  .card { padding: 16px; margin-bottom: 14px; }
+  .card-title { font-size: 15px; }
   .info-grid { grid-template-columns: 1fr; }
   .info-val { text-align: right; }
   .budget-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .chart-area { flex-direction: column; align-items: center; gap: 16px; }
   .chart-wrap canvas { max-width: 160px; max-height: 160px; }
-  .docs-grid { grid-template-columns: 1fr; }
+  .docs-grid { grid-template-columns: 1fr; gap: 12px; }
   .sponsor-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
-  .slider-result { grid-template-columns: repeat(2, 1fr); }
-  .letter { padding: 18px; }
+  .letter { padding: 16px; }
+  .letter-actions { grid-template-columns: 1fr; gap: 10px; }
+  .doc-card { padding: 18px; }
   .profile-stats { grid-template-columns: repeat(2, 1fr); }
-  .letter-actions { grid-template-columns: 1fr; }
-  .docs-summary { grid-template-columns: repeat(3, 1fr); }
-  .sponsor-tiers { grid-template-columns: repeat(2, 1fr); }
-  .certs-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Card divider and subheader */
@@ -1030,48 +1034,67 @@ input[type=range]::-moz-range-thumb {
 
 /* ===== RESPONSIVE: MOBILE (≤480px) ===== */
 @media (max-width: 480px) {
-  .header { padding: 24px 0 20px; }
-  .hero { flex-direction: column; text-align: center; gap: 20px; }
+  .header { padding: 20px 0 16px; }
+  .hero { flex-direction: column; text-align: center; gap: 16px; }
   .hero-image { order: -1; }
   .hero-desc { max-width: 100%; }
-  .hero-img { width: 100px; height: 100px; }
-  .hero-img-wrap { width: 116px; height: 116px; }
-  .hero-name { font-size: 20px; }
-  .hero-badge { font-size: 11px; }
+  .hero-img { width: 90px; height: 90px; }
+  .hero-img-wrap { width: 106px; height: 106px; }
+  .hero-name { font-size: 18px; }
+  .hero-badge { font-size: 10px; padding: 4px 12px; }
   .stats-row { grid-template-columns: 1fr; gap: 8px; }
-  .main { padding: 16px 12px; }
-  .tabs-wrap { padding-left: 12px; padding-right: 12px; }
-  .header-inner { padding-left: 12px; padding-right: 12px; }
-  .nav-tabs { border-radius: 0 0 10px 10px; }
-  .nav-tab { padding: 8px 5px; font-size: 11px; }
-  .nav-tab svg { width: 14px; height: 14px; }
-  .card { padding: 14px; margin-bottom: 14px; }
-  .card-header { gap: 10px; margin-bottom: 14px; padding-bottom: 10px; }
-  .card-icon { width: 34px; height: 34px; border-radius: 10px; }
-  .card-icon svg { width: 17px; height: 17px; }
-  .budget-cards { gap: 8px; }
-  .b-card { padding: 12px; }
+  .stat-card { padding: 12px 14px; gap: 10px; }
+  .stat-card-icon { width: 36px; height: 36px; }
+  .main { padding: 14px 10px; }
+  .tabs-wrap { padding-left: 10px; padding-right: 10px; }
+  .header-inner { padding-left: 10px; padding-right: 10px; }
+  .nav-tabs { gap: 4px; padding: 4px; border-radius: 0 0 10px 10px; }
+  .nav-tab { padding: 8px 4px; font-size: 10px; gap: 4px; }
+  .nav-tab svg { width: 13px; height: 13px; }
+  .card { padding: 12px; margin-bottom: 12px; border-radius: 12px; }
+  .card-header { gap: 8px; margin-bottom: 12px; padding-bottom: 8px; }
+  .card-icon { width: 30px; height: 30px; border-radius: 8px; }
+  .card-icon svg { width: 15px; height: 15px; }
+  .card-title { font-size: 14px; }
+  .card-sub { font-size: 11px; }
+  .budget-cards { grid-template-columns: 1fr; gap: 8px; }
+  .b-card { padding: 10px; }
+  .bamt { font-size: 18px; }
+  .blbl { font-size: 11px; }
   .budget-total { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .info-row { font-size: 12.5px; padding: 8px 0; }
-  .timeline { padding-right: 20px; }
-  .tl-dot { right: -20px; width: 14px; height: 14px; }
-  .tl-title { font-size: 12.5px; }
-  .tl-sub { font-size: 11px; }
+  .info-row { font-size: 12px; padding: 6px 0; }
+  .breadcrumbs { font-size: 11px; margin-bottom: 12px; }
+  .profile-stats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .ps-item { padding: 6px 4px; }
+  .ps-val { font-size: 14px; }
+  .ps-lbl { font-size: 9px; }
+  .timeline { padding-right: 16px; }
+  .tl-dot { right: -16px; width: 12px; height: 12px; }
+  .tl-title { font-size: 12px; }
+  .tl-sub { font-size: 10.5px; }
   .slider-result { grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 12px 8px; }
   .sr-val { font-size: 16px; }
-  .doc-card { padding: 16px; }
-  .doc-card .dc-icon { width: 44px; height: 44px; }
-  .doc-card .dc-icon svg { width: 22px; height: 22px; }
-  .sp-card { padding: 14px; }
-  .sp-amt { font-size: 20px; }
-  .contact-grid { gap: 10px; }
-  .profile-stats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-  .ps-val { font-size: 15px; }
-  .ps-item { padding: 8px 6px; }
-  .contact-btn { padding: 12px 14px; }
-  .certs-grid { grid-template-columns: repeat(2, 1fr); }
-  .letter { padding: 14px; line-height: 1.8; }
-  .footer { padding: 22px 16px; font-size: 11px; }
+  .doc-card { padding: 14px; }
+  .doc-card .dc-icon { width: 40px; height: 40px; border-radius: 12px; }
+  .doc-card .dc-icon svg { width: 20px; height: 20px; }
+  .doc-card .dc-name { font-size: 12.5px; }
+  .doc-card .dc-uni { font-size: 11px; }
+  .doc-card .dc-meta { font-size: 10px; padding: 3px 10px; }
+  .view-btn { font-size: 12px; padding: 8px 12px; }
+  .sp-card { padding: 12px; }
+  .sp-amt { font-size: 18px; }
+  .sp-lbl { font-size: 12px; }
+  .contact-grid { gap: 8px; }
+  .contact-btn { padding: 10px 12px; }
+  .contact-btn .cb-icon { width: 32px; height: 32px; }
+  .letter { padding: 12px; line-height: 1.8; }
+  .letter-header-card { gap: 10px; }
+  .letter-header-icon { width: 36px; height: 36px; }
+  .letter-header-icon svg { width: 18px; height: 18px; }
+  .letter-header-title { font-size: 16px; }
+  .letter-actions { gap: 10px; }
+  .la-card .card-header { padding: 10px; }
+  .footer { padding: 18px 14px; font-size: 10px; }
 }
 
 /* ===== RESPONSIVE: LAPTOP (1025px–1400px) ===== */
@@ -1334,13 +1357,6 @@ input[type=range]::-moz-range-thumb {
       </div>
       <div>
         <h2 class="letter-header-title">خطاب طلب الرعاية التعليمية</h2>
-        <div class="letter-header-sub">مقدم إلى الجهات الداعمة والمحسنين · 2026</div>
-      </div>
-    </div>
-    <div class="letter-status">
-        <div class="ls-item"><span class="ls-dot" style="background:#2e7d32"></span> الحالة: <strong>قيد المراجعة</strong></div>
-        <div class="ls-item"><span class="ls-dot" style="background:#c8973a"></span> الأولوية: <strong>عالية</strong></div>
-        <div class="ls-item"><span class="ls-dot" style="background:#0a2f5c"></span> آخر موعد: <strong>31 يوليو 2026</strong></div>
       </div>
     </div>
 
@@ -1408,21 +1424,6 @@ input[type=range]::-moz-range-thumb {
   <!-- PANEL: DOCS -->
   <div class="panel" id="panel-docs">
 
-    <!-- Document summary bar -->
-    <div class="docs-summary">
-      <div class="ds-item">
-        <div class="ds-val">3</div>
-        <div class="ds-lbl">مستندات</div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-val" style="color:#2e7d32;">PDF</div>
-        <div class="ds-lbl">الصيغة</div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-val">جميعها</div>
-        <div class="ds-lbl">موثقة ومعتمدة</div>
-      </div>
-    </div>
 
     <div class="card">
       <div class="card-header">
@@ -1430,6 +1431,20 @@ input[type=range]::-moz-range-thumb {
         <div><div class="card-title">المستندات الرسمية الموثقة</div><div class="card-sub">اضغط على أي مستند لفتحه في نافذة جديدة</div></div>
       </div>
       <div class="docs-grid">
+        <div class="doc-card" onclick="window.open(pdfFiles.accept, '_blank')">
+          <div class="dc-badge verified">موثق</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="dc-name">خطاب القبول</div>
+          <div class="dc-uni">Karabük Üniversitesi · 10 مايو 2026</div>
+          <div class="dc-meta">YÖK ID: 081-7AC-89</div>
+          <button class="view-btn">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            عرض المستند
+          </button>
+        </div>
+
         <div class="doc-card" onclick="window.open(pdfFiles.qual, '_blank')">
           <div class="dc-badge verified">موثق</div>
           <div class="dc-icon">
