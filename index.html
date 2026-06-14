@@ -901,6 +901,36 @@ input[type=range]::-moz-range-thumb {
   .certs-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Card divider and subheader */
+.card-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0 16px;
+}
+.card-subheader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+}
+.card-subheader svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #c8973a;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+.subheader-count {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--muted);
+  margin-right: auto;
+}
+
 /* Certificate gallery */
 .certs-grid {
   display: grid;
@@ -1110,44 +1140,6 @@ input[type=range]::-moz-range-thumb {
       </div>
       <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
       </div>
-    </div>
-
-    <!-- Certificates gallery -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-icon" style="background:linear-gradient(135deg,#c8973a,#e0b04a);">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <div><div class="card-title">شهادات الشكر والتقدير</div><div class="card-sub">5 شهادات · اضغط على الصورة لتكبيرها</div></div>
-      </div>
-      <div class="certs-grid">
-        <div class="cert-card" onclick="openLightbox('Images/1.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/1.jpeg" alt="شهادة شكر 1" class="cert-img" loading="lazy"></div>
-          <div class="cert-name">شهادة شكر وتقدير</div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/2.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/2.jpeg" alt="شهادة شكر 2" class="cert-img" loading="lazy"></div>
-          <div class="cert-name">شهادة شكر وتقدير</div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/3.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/3.jpeg" alt="شهادة شكر 3" class="cert-img" loading="lazy"></div>
-          <div class="cert-name">شهادة شكر وتقدير</div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/4.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/4.jpeg" alt="شهادة شكر 4" class="cert-img" loading="lazy"></div>
-          <div class="cert-name">شهادة شكر وتقدير</div>
-        </div>
-        <div class="cert-card" onclick="openLightbox('Images/5.jpeg')">
-          <div class="cert-img-wrap"><img src="Images/5.jpeg" alt="شهادة شكر 5" class="cert-img" loading="lazy"></div>
-          <div class="cert-name">شهادة شكر وتقدير</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-      <span class="lightbox-close">&times;</span>
-      <img class="lightbox-img" id="lightboxImg">
     </div>
 
   </div>
@@ -1381,8 +1373,8 @@ input[type=range]::-moz-range-thumb {
     <!-- Document summary bar -->
     <div class="docs-summary">
       <div class="ds-item">
-        <div class="ds-val">3</div>
-        <div class="ds-lbl">المستندات</div>
+        <div class="ds-val">8</div>
+        <div class="ds-lbl">ملف</div>
       </div>
       <div class="ds-item">
         <div class="ds-val" style="color:#2e7d32;">PDF</div>
@@ -1442,6 +1434,36 @@ input[type=range]::-moz-range-thumb {
           </button>
         </div>
 
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="card-subheader">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>شهادات الشكر والتقدير</span>
+        <span class="subheader-count">5 صور</span>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card" onclick="openLightbox('Images/1.jpeg')">
+          <div class="cert-img-wrap"><img src="Images/1.jpeg" alt="شهادة شكر 1" class="cert-img" loading="lazy"></div>
+          <div class="cert-name">شهادة شكر وتقدير</div>
+        </div>
+        <div class="cert-card" onclick="openLightbox('Images/2.jpeg')">
+          <div class="cert-img-wrap"><img src="Images/2.jpeg" alt="شهادة شكر 2" class="cert-img" loading="lazy"></div>
+          <div class="cert-name">شهادة شكر وتقدير</div>
+        </div>
+        <div class="cert-card" onclick="openLightbox('Images/3.jpeg')">
+          <div class="cert-img-wrap"><img src="Images/3.jpeg" alt="شهادة شكر 3" class="cert-img" loading="lazy"></div>
+          <div class="cert-name">شهادة شكر وتقدير</div>
+        </div>
+        <div class="cert-card" onclick="openLightbox('Images/4.jpeg')">
+          <div class="cert-img-wrap"><img src="Images/4.jpeg" alt="شهادة شكر 4" class="cert-img" loading="lazy"></div>
+          <div class="cert-name">شهادة شكر وتقدير</div>
+        </div>
+        <div class="cert-card" onclick="openLightbox('Images/5.jpeg')">
+          <div class="cert-img-wrap"><img src="Images/5.jpeg" alt="شهادة شكر 5" class="cert-img" loading="lazy"></div>
+          <div class="cert-name">شهادة شكر وتقدير</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1543,6 +1565,12 @@ input[type=range]::-moz-range-thumb {
     </div>
   </div>
 
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" id="lightboxImg">
 </div>
 
 <div class="footer">
