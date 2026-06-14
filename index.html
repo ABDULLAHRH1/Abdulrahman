@@ -994,13 +994,6 @@ input[type=range]::-moz-range-thumb {
   transition: transform 0.3s;
 }
 .cert-card:hover .cert-img { transform: scale(1.05); }
-.cert-name {
-  padding: 8px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--navy);
-  text-align: center;
-}
 
 /* Lightbox */
 .lightbox {
@@ -1550,14 +1543,13 @@ input[type=range]::-moz-range-thumb {
       </div>
     </div>
 
-    <!-- Sponsorship levels -->
   </div>
 </div>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" id="lightboxImg">
+      <div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" onclick="event.stopPropagation()">
 </div>
 
 <div class="footer">
@@ -1608,13 +1600,8 @@ function showTab(name, btn) {
 
   setTimeout(function() { transitioning = false; }, 400);
 
-  if (name === 'budget') { initChart(); initSliders(); }
+  if (name === 'budget') { initChart(); }
 }
-function initSliders() {
-  var bs = document.getElementById('budgetSlider');
-  if (bs && bs.offsetParent !== null) updateBudget(bs.value);
-}
-
 // CHART
 var chartDone = false;
 function initChart() {
@@ -1640,36 +1627,6 @@ function initChart() {
   });
 }
 
-// BUDGET SLIDER
-function positionBubble(slider, bubble) {
-  var rect = slider.getBoundingClientRect();
-  if (!rect || rect.width === 0) return;
-  var prect = slider.parentElement.getBoundingClientRect();
-  var ratio = (slider.value - slider.min) / (slider.max - slider.min);
-  var thumbWidth = 26;
-  var track = rect.width - thumbWidth;
-  var thumbCenterLeft = (1 - ratio) * track + thumbWidth / 2;
-  var x = rect.left - prect.left + thumbCenterLeft;
-  bubble.style.left = Math.round(x) + 'px';
-  // Sync gold fill: gold ends exactly at thumb center (RTL: fill from right)
-  var goldPct = Math.round((1 - thumbCenterLeft / rect.width) * 100);
-  slider.style.setProperty('--pct', goldPct + '%');
-}
-function selectTier(pct) {
-  var btn = document.querySelectorAll('.nav-tab')[2];
-  var panel = document.getElementById('panel-budget');
-  if (panel.classList.contains('active')) {
-    document.getElementById('budgetSlider').value = pct;
-    updateBudget(pct);
-  } else {
-    showTab('budget', btn);
-    setTimeout(function() {
-      document.getElementById('budgetSlider').value = pct;
-      updateBudget(pct);
-    }, 450);
-  }
-}
-
 function openLightbox(src) {
   var lb = document.getElementById('lightbox');
   var img = document.getElementById('lightboxImg');
@@ -1680,45 +1637,8 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('show');
 }
 
-function updateBudget(v) {
-  var annual = Math.round(6950 * v / 100);
-  var monthly = Math.round(annual / 12);
-  var tl = Math.round(annual * 33.8);
-  document.getElementById('pctDisplay').textContent = v + '%';
-  document.getElementById('annualDisplay').textContent = '$' + annual.toLocaleString();
-  document.getElementById('monthlyDisplay').textContent = '$' + monthly.toLocaleString();
-  document.getElementById('tlDisplay').textContent = tl.toLocaleString();
-  var slider = document.getElementById('budgetSlider');
-  var bubble = document.getElementById('budgetBubble');
-  bubble.textContent = v + '%';
-  positionBubble(slider, bubble);
-}
-
-// SPONSOR
-// SMOOTH SLIDER ANIMATION
-function smoothSliderTo(slider, target, duration, updateFn) {
-  var start = parseFloat(slider.value);
-  var mn = parseFloat(slider.min) || 0;
-  var mx = parseFloat(slider.max) || 100;
-  var range = mx - mn;
-  var startTime = null;
-  function step(ts) {
-    if (!startTime) startTime = ts;
-    var elapsed = ts - startTime;
-    var t = Math.min(1, elapsed / duration);
-    var ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    var val = Math.round(start + (target - start) * ease);
-    val = Math.max(mn, Math.min(mx, val));
-    slider.value = val;
-    if (updateFn) updateFn(val);
-    if (t < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
 // PAGE LOAD
 window.addEventListener('load', function() {
-  initSliders();
   setTimeout(function() {
     var fill = document.getElementById('progFill');
     var lbl = document.getElementById('pctLbl');
@@ -1730,11 +1650,6 @@ window.addEventListener('load', function() {
       if (cur >= target) clearInterval(t);
     }, 18);
   }, 500);
-  function posAll() {
-    var bs = document.getElementById('budgetSlider');
-    if (bs && bs.offsetParent !== null) positionBubble(bs, document.getElementById('budgetBubble'));
-  }
-  window.addEventListener('resize', posAll);
 });
 </script>
 </body>
