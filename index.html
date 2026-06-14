@@ -1100,13 +1100,13 @@ input[type=range]::-moz-range-thumb {
 <!-- TABS TOP -->
 <div class="tabs-wrap">
 <div class="nav-tabs">
-  <button class="nav-tab active" onclick="showTab('profile',this)" title="السيرة الأكاديمية والمعلومات الشخصية">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    الملف الشخصي
-  </button>
-  <button class="nav-tab" onclick="showTab('letter',this)" title="خطاب طلب الكفالة التعليمية">
+  <button class="nav-tab active" onclick="showTab('letter',this)" title="خطاب طلب الرعاية التعليمية">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
     خطاب الطلب
+  </button>
+  <button class="nav-tab" onclick="showTab('profile',this)" title="السيرة الأكاديمية والمعلومات الشخصية">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    الملف الشخصي
   </button>
   <button class="nav-tab" onclick="showTab('budget',this)" title="تفاصيل الميزانية السنوية والمساهمة">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -1186,11 +1186,11 @@ input[type=range]::-moz-range-thumb {
   <div class="breadcrumbs" id="breadcrumbs">
     <span>الرئيسية</span>
     <span class="sep">›</span>
-    <span class="current" id="bcCurrent">الملف الشخصي</span>
+    <span class="current" id="bcCurrent">خطاب الطلب</span>
   </div>
 
   <!-- PANEL: PROFILE -->
-  <div class="panel active" id="panel-profile">
+  <div class="panel" id="panel-profile">
 
     <!-- Panel Stats Summary -->
     <div class="profile-stats">
@@ -1333,7 +1333,7 @@ input[type=range]::-moz-range-thumb {
   </div>
 
   <!-- PANEL: LETTER -->
-  <div class="panel" id="panel-letter">
+  <div class="panel active" id="panel-letter">
 
     <div class="letter-header-card">
       <div class="letter-header-icon">
